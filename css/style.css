@@ -1,0 +1,696 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Carlito', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+/************************ HEADER ************************/
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 33px 9%;
+    background: white;
+    border-bottom: 1px solid rgb(229, 231, 235);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    transition: height 0.3s;
+
+
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(17, 24, 39);
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    color: rgb(17, 24, 39);
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
+    padding-bottom: 39px;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid rgb(79, 70, 229);
+    color: rgb(75, 85, 99);
+}
+
+#menu-icon {
+    color: black;
+    font-size: 35px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+
+#toggleButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding-left: 45px;
+    font-size: 20px;
+}
+
+.fa-moon {
+    color: black;
+}
+
+/************************ GLOBAL ************************/
+
+
+.global {
+    background: white;
+
+}
+
+.image {
+    width: 600px;
+
+}
+
+.title {
+    padding-bottom: 10px;
+}
+
+.banner-text h1 {
+    font-family: 'Carlito', sans-serif;
+    font-size: 90px;
+    line-height: 1;
+    color: rgb(17, 24, 39);
+    margin: 0 0 50px;
+}
+
+.banner-text h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: rgb(17, 24, 39);
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: rgb(17, 24, 39);
+
+}
+
+.banner-text p {
+    color: rgb(75, 85, 99);
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+
+}
+
+.banner-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner-img img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    transition: 0.2s ease-out;
+}
+
+.banner-img:hover img:hover,
+.sports img:hover {
+    transform: scale(1.1);
+}
+
+.banner-text a {
+    display: inline-block;
+    color: white;
+    background: rgb(79, 70, 229);
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 10px;
+    text-transform: uppercase;
+    transition: all .55s ease;
+    margin: 10px;
+
+}
+
+.banner-text a:hover {
+    background: rgb(99, 102, 241);
+    border: 1px solid white;
+    color: white;
+    transform: translateX(5px);
+}
+
+.banner-text a.ctaa {
+    background: transparent;
+    border: 1px solid rgb(79, 70, 229);
+    margin-left: 20 px;
+    color: rgb(79, 70, 229);
+}
+
+.banner-text a.ctaa i {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.divider {
+    color: black;
+    background-color: transparent;
+    border-radius: 5px;
+    align-items: center;
+    margin: 0;
+
+}
+
+#divider {
+    display: flex;
+    justify-content: center;
+}
+
+.banner {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 7rem;
+    padding: 5% 10%;
+}
+
+.banner-text {
+    width: 100%;
+}
+
+
+.banner.intro,
+.banner.project {
+    background-color: rgb(242, 245, 246);
+
+}
+
+/************************ BANNER ************************/
+
+
+.banner.intro {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 7rem;
+    padding: 10% 10%;
+    box-shadow: inset 0px -32px 4px -30px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/************************ ABOUT ************************/
+
+
+.banner.about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: white;
+}
+
+.sports,
+.hobbies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sports img {
+    width: 80%;
+    border-radius: 10px;
+    transition: 0.2s ease-out;
+    margin-bottom: 40px;
+}
+
+.sport {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.sport p {
+    transition: 0.2s ease;
+}
+
+.hobbiesContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.column-txt,
+.column-img {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image {
+    width: 100%;
+    max-width: 600px;
+    max-width: 500px;
+
+}
+
+.text {
+    text-align: center;
+}
+
+#handButton,
+#hobbiesButton {
+    display: inline-block;
+    color: white;
+    background: rgb(79, 70, 229);
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 10px;
+    text-transform: uppercase;
+    transition: all .55s ease;
+    margin-bottom: 15px;
+
+
+}
+
+#handButton:hover,
+#hobbiesButton:hover {
+    background: rgb(99, 102, 241);
+    border: 1px solid white;
+    cursor: pointer;
+    color: white;
+
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 15%;
+    flex-direction: row;
+}
+
+.slider {
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    display: none;
+    height: 280px;
+}
+
+
+.slider img:first-child {
+    display: block;
+}
+
+.fa-arrow-left:before {
+    margin-left: 10px;
+
+}
+
+
+
+/************************ PROJECT ************************/
+
+
+.banner.project {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow:
+        inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1),
+        inset 0px -2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.banner.project .banner-text {
+    width: 100%;
+
+}
+
+.handBanner,
+.hobbiesBanner {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.7s ease;
+}
+
+#buttonSavan,
+#buttonBoa {
+    cursor: pointer;
+
+}
+
+.handBanner.active {
+    height: 1000px;
+    /* Modifier la hauteur selon vos besoins */
+}
+
+.hobbiesBanner.active {
+    height: 400px;
+    /* Modifier la hauteur selon vos besoins */
+}
+
+#buttonSavan,
+#buttonBoa,
+#buttonGS,
+#buttonElsenTable,
+#buttonElsenMap {
+    width: 600px;
+    height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.7s;
+    z-index: 1;
+
+}
+
+.textSavan,
+.textBoa,
+.textGS,
+.textElsen {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    z-index: 2;
+    opacity: 0;
+    transition: 0.7s;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.textSavan p,
+.textBoa p,
+.textGS p,
+.textElsen p {
+    color: rgb(75, 85, 99);
+
+}
+
+#buttonSavan {
+    background-image: url(../img/savan.png);
+}
+
+.savan:hover #buttonSavan {
+    margin-right: 40%;
+    filter: grayscale(100%);
+
+}
+
+.savan:hover .textSavan {
+    opacity: 1;
+    margin-left: 40%;
+}
+
+.savan,
+.boa,
+.giantSentinel,
+.elsen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+}
+
+#buttonElsenMap {
+    background-image: url(../img/ElsenMap.png);
+}
+
+#buttonElsenTable {
+    background-image: url(../img/ElsenTable.png);
+}
+
+.elsen:hover #buttonElsenMap {
+    transform: translateX(350px);
+    /* Move right */
+    filter: grayscale(100%);
+
+}
+
+.elsen:hover #buttonElsenTable {
+    transform: translateX(-350px);
+    /* Move left */
+    filter: grayscale(100%);
+
+}
+
+.elsen:hover .textElsen {
+    opacity: 1;
+}
+
+
+#buttonBoa {
+    background-image: url(../img/boa.png);
+}
+
+.boa:hover #buttonBoa {
+    margin-left: 40%;
+    filter: grayscale(100%);
+
+}
+
+.boa:hover .textBoa {
+    opacity: 1;
+    margin-right: 40%;
+}
+
+#buttonGS {
+    background-image: url(../img/giantSentinel.png);
+}
+
+.giantSentinel:hover #buttonGS {
+    margin-right: 40%;
+
+}
+
+.giantSentinel:hover .textGS {
+    opacity: 1;
+    margin-left: 40%;
+}
+
+
+button {
+    border-color: unset;
+    background-color: rgb(79, 70, 229);
+    border: none;
+}
+
+
+
+/************************ CONTACT ************************/
+
+
+.banner.contact {
+    background-color: white;
+
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.informations {
+    display: flex;
+    flex-direction: column;
+}
+
+.informations a {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: rgb(79, 70, 229);
+    color: white;
+    text-transform: math-auto;
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+/******************* RESPONSIVE ******************/
+
+
+@media screen and (max-width: 950px) {
+    .banner.intro {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 15% 10%;
+    }
+
+    header {
+        height: 0px;
+    }
+
+    .navlist a {
+        margin-left: 20px;
+
+    }
+
+    .slider-container {
+        flex-direction: column;
+    }
+
+    .hobbiesBanner.active {
+        height: 1330px;
+    }
+
+    .slider img {
+        height: 380px;
+
+    }
+
+    .sport {
+        flex-direction: column;
+    }
+
+    .handBanner.active {
+        height: 1200px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    #buttonSavan,
+    #buttonBoa,
+    #buttonGS {
+        width: 450px;
+        height: 400px;
+
+    }
+
+    .button-container {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .handBanner.active {
+        height: 1300px;
+    }
+
+}
+
+
+@media screen and (max-width: 650px) {
+    .button-container {
+        flex-direction: column;
+        /* Stack buttons vertically */
+        width: 100%;
+        /* Adjust width to fit container */
+        height: auto;
+        /* Allow height to adjust based on content */
+    }
+
+    #buttonElsenTable,
+    #buttonElsenMap {
+        position: relative;
+        /* Change to relative positioning for stacking */
+        width: 100%;
+        /* Full width within the container */
+        height: auto;
+        /* Adjust height to maintain aspect ratio */
+        transform: none;
+        /* Remove transform effects */
+        margin-bottom: 20px;
+        /* Add some space between buttons */
+    }
+
+    .textElsen {
+        position: static;
+        /* Change to static positioning */
+        width: auto;
+        /* Adjust width to fit content */
+        height: auto;
+        /* Adjust height to fit content */
+        left: auto;
+        /* Reset left positioning */
+        opacity: 1;
+        /* Ensure text is visible */
+        margin: 0 auto;
+        /* Center the text block */
+        padding: 20px;
+        /* Adjust padding for smaller screens */
+    }
+
+    .button-container:hover+.textElsen {
+        opacity: 1;
+        /* Ensure text remains visible on hover */
+    }
+}
+
+/******************* Dark Mode ******************/
+
+.darknight {
+    background-color: rgba(32, 41, 56, 1) !important;
+}
+
+.lightnight {
+    background-color: rgba(57, 65, 83, 1) !important;
+}
+
+.darkButton {
+    background-color: white !important;
+    color: rgba(57, 65, 83, 1) !important;
+    border-color: 1px solid white !important;
+}
+
+.darkButton:hover {
+    background-color: transparent !important;
+    color: white !important;
+    border-color: 1px solid white !important;
+}
+
+.darkText {
+    color: white !important;
+}
