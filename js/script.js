@@ -1,9 +1,17 @@
+const travelButton = document.getElementById('travelButton');
+const travelBanner = document.getElementById('travelBanner');
+
+
 const handButton = document.getElementById('handButton');
 const handBanner = document.getElementById('handBanner');
 
 
 const hobbiesButton = document.getElementById('hobbiesButton');
 const hobbiesBanner = document.getElementById('hobbiesBanner');
+
+travelButton.addEventListener('click', function () {
+    travelBanner.classList.toggle('active');
+});
 
 handButton.addEventListener('click', function () {
     handBanner.classList.toggle('active');
