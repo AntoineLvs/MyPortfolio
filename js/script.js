@@ -26,7 +26,7 @@ sliders.forEach(slider => {
         images[currentImageIndex].style.display = 'block';
     }
 
-    setInterval(showNextImage, 3000); // Change d'image toutes les 3 secondes (3000 ms)
+    setInterval(showNextImage, 2000);
 });
 
 
@@ -36,16 +36,16 @@ window.addEventListener('scroll', function () {
 
     if (window.scrollY > 0) {
         navLinks.forEach(function (link) {
-            link.style.paddingBottom = '22px';
+            link.style.paddingBottom = '24px';
         });
-        header.style.height = '50px'; // Ajustez cette valeur pour définir la nouvelle hauteur du header lors du défilement
+        header.style.height = '50px'; 
         header.style.opacity = '0.85';
 
     } else {
         navLinks.forEach(function (link) {
             link.style.paddingBottom = '39px';
         });
-        header.style.height = '100px'; // Hauteur originale du header
+        header.style.height = '100px';
         header.style.opacity = '1';
 
     }
@@ -79,42 +79,53 @@ let isOn = false;
 const toggleButton = document.getElementById('toggleButton');
 const lightElements = document.querySelectorAll('.light');
 const darkElements = document.querySelectorAll('.dark');
-const buttonElements = document.querySelectorAll('.switchButton');
+const buttonElements = document.querySelectorAll('.switch-button');
 const textElements = document.querySelectorAll('.text-light');
 const nightIcon = document.querySelector('.moon-icon');
 
 
 toggleButton.addEventListener('click', function () {
-    isOn = !isOn; // Inverse l'état actuel (on/off)
+    isOn = !isOn;
 
     lightElements.forEach(function (element) {
         if (isOn) {
-            element.classList.add('lightnight');
+            element.classList.add('light-night');
+            element.classList.remove('light-day');
+
         } else {
-            element.classList.remove('lightnight');
+            element.classList.remove('light-night');
+            element.classList.add('light-day');
         }
     });
 
     darkElements.forEach(function (element) {
         if (isOn) {
-            element.classList.add('darknight');
+            element.classList.add('dark-night');
+            element.classList.remove('dark-day');
+
         } else {
-            element.classList.remove('darknight');
+            element.classList.remove('dark-night');
+            element.classList.add('dark-day');
+
         }
     });
 
     buttonElements.forEach(function (element) {
         if (isOn) {
-            element.classList.add('switchButton');
+            element.classList.add('switch-button');
         } else {
-            element.classList.remove('switchButton');
+            element.classList.remove('switch-button');
         }
     });
     textElements.forEach(function (element) {
         if (isOn) {
-            element.classList.add('darkText');
+            element.classList.add('dark-text');
+            element.classList.remove('light-text');
+
         } else {
-            element.classList.remove('darkText');
+            element.classList.remove('dark-text');
+            element.classList.add('light-text');
+
         }
     });
 

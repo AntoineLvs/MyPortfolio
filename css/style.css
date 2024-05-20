@@ -19,7 +19,6 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 33px 9%;
-    background: white;
     border-bottom: 1px solid rgb(229, 231, 235);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 100px;
@@ -136,7 +135,9 @@ h2 {
     transform: scale(1.1);
 }
 
-.banner-text a {
+.banner.intro a,
+.banner.about a,
+.banner.contact a {
     display: inline-block;
     color: white;
     background: rgb(79, 70, 229);
@@ -152,7 +153,18 @@ h2 {
 
 }
 
-.banner-text a:hover {
+.banner.project a {
+    color: rgb(79, 70, 229);
+}
+
+
+.banner.project a:hover {
+    color: rgb(99, 102, 241);
+}
+
+.banner.intro a:hover,
+.banner.about a:hover,
+.banner.contact a:hover {
     background: rgb(99, 102, 241);
     border: 1px solid white;
     color: white;
@@ -199,12 +211,6 @@ h2 {
 }
 
 
-.banner.intro,
-.banner.project {
-    background-color: rgb(242, 245, 246);
-
-}
-
 /************************ BANNER ************************/
 
 
@@ -229,7 +235,6 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background: white;
 }
 
 .sports,
@@ -404,7 +409,7 @@ h2 {
 .textGS,
 .textElsen {
     position: absolute;
-    width: 400px;
+    width: 450px;
     height: 400px;
     z-index: 2;
     opacity: 0;
@@ -413,8 +418,16 @@ h2 {
     flex-direction: row;
     background-color: white;
     align-items: center;
-    padding: 50px;
+    padding: 0px 30px 0px 30px;
     border-radius: 10px;
+}
+
+.textSavan,
+.textBoa,
+.textGS,
+.textElsen {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.15), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    border: 1px solid rgb(0 0 0 / 0.1);
 }
 
 .textSavan p,
@@ -447,6 +460,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 50px;
 }
 
 .button-container {
@@ -464,14 +478,14 @@ h2 {
 }
 
 .elsen:hover #buttonElsenMap {
-    transform: translateX(350px);
+    transform: translateX(50%);
     /* Move right */
     filter: grayscale(100%);
 
 }
 
 .elsen:hover #buttonElsenTable {
-    transform: translateX(-350px);
+    transform: translateX(-50%);
     /* Move left */
     filter: grayscale(100%);
 
@@ -503,6 +517,7 @@ h2 {
 
 .giantSentinel:hover #buttonGS {
     margin-right: 40%;
+    filter: grayscale(100%);
 
 }
 
@@ -521,12 +536,6 @@ button {
 
 
 /************************ CONTACT ************************/
-
-
-.banner.contact {
-    background-color: white;
-
-}
 
 .contact-container {
     display: flex;
@@ -624,73 +633,86 @@ html {
 
 @media screen and (max-width: 650px) {
     .button-container {
+        display: flex;
+        justify-content: space-between;
+        width: 1000px;
         flex-direction: column;
-        /* Stack buttons vertically */
-        width: 100%;
-        /* Adjust width to fit container */
-        height: auto;
-        /* Allow height to adjust based on content */
+        align-items: center;
     }
 
-    #buttonElsenTable,
-    #buttonElsenMap {
-        position: relative;
-        /* Change to relative positioning for stacking */
-        width: 100%;
-        /* Full width within the container */
-        height: auto;
-        /* Adjust height to maintain aspect ratio */
-        transform: none;
-        /* Remove transform effects */
-        margin-bottom: 20px;
-        /* Add some space between buttons */
+    .elsen #buttonElsenMap {
+        transform: translateY(-200px);
     }
 
-    .textElsen {
-        position: static;
-        /* Change to static positioning */
-        width: auto;
-        /* Adjust width to fit content */
-        height: auto;
-        /* Adjust height to fit content */
-        left: auto;
-        /* Reset left positioning */
-        opacity: 1;
-        /* Ensure text is visible */
-        margin: 0 auto;
-        /* Center the text block */
-        padding: 20px;
-        /* Adjust padding for smaller screens */
+    .elsen #buttonElsenTable {
+        transform: translateY(-200px);
     }
 
-    .button-container:hover+.textElsen {
-        opacity: 1;
-        /* Ensure text remains visible on hover */
+    .elsen:hover #buttonElsenMap {
+        transform: translateY(-100px);
+        /* Move right */
+        filter: grayscale(100%);
+
+    }
+
+    .elsen:hover #buttonElsenTable {
+        transform: translateY(-300px);
+        /* Move left */
+        filter: grayscale(100%);
+
     }
 }
 
 /******************* Dark Mode ******************/
 
-.darknight {
+.dark-night {
     background-color: rgba(32, 41, 56, 1) !important;
 }
 
-.lightnight {
+.dark-day {
+    background-color: rgba(255, 255, 255, 1) !important;
+
+}
+
+.light-night {
     background-color: rgba(57, 65, 83, 1) !important;
 }
 
-.darkButton {
-    background-color: white !important;
+.light-day {
+    background-color: rgb(242, 245, 246) !important;
+
+}
+
+.dark-text {
+    color: white !important;
+}
+
+.light-text {
     color: rgba(57, 65, 83, 1) !important;
-    border-color: 1px solid white !important;
 }
 
-.darkButton:hover {
-    background-color: transparent !important;
-    color: white !important;
-    border-color: 1px solid white !important;
+.light-night,
+.dark-night,
+.switch-button,
+.dark-text,
+.light-day,
+.dark-day,
+.light-text {
+    transition: all 0.3s ease;
 }
 
-.darkText {
-    color: white !important;
+.light-night,
+.dark-night,
+.light-day,
+.dark-day {
+    transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.switch-button {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-text,
+.light-text {
+    transition: color 0.3s ease;
 }
