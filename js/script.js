@@ -26,22 +26,31 @@ sliders.forEach(slider => {
         images[currentImageIndex].style.display = 'block';
     }
 
-    setInterval(showNextImage, 3000); // Change d'image toutes les 3 secondes (3000 ms)
+    setInterval(showNextImage, 2000);
 });
 
 
 window.addEventListener('scroll', function () {
     var header = document.getElementById('header');
+    var navLinks = document.querySelectorAll('.navlist a');
 
     if (window.scrollY > 0) {
-        header.style.height = '50px'; // Ajustez cette valeur pour définir la nouvelle hauteur du header lors du défilement
+        navLinks.forEach(function (link) {
+            link.style.paddingBottom = '24px';
+        });
+        header.style.height = '50px'; 
         header.style.opacity = '0.85';
+
     } else {
-        header.style.height = '100px'; // Hauteur originale du header
+        navLinks.forEach(function (link) {
+            link.style.paddingBottom = '39px';
+        });
+        header.style.height = '100px';
         header.style.opacity = '1';
 
     }
 });
+
 
 
 var buttonSavan = document.getElementById('buttonSavan');
@@ -57,26 +66,78 @@ buttonSavan.addEventListener('click', function () {
 });
 
 
-// const toggleButton = document.getElementById('toggleButton');
-// var aboutMe = document.getElementById('aboutMe');
-// var contact = document.getElementById('contact');
+var aboutMe = document.getElementById('aboutMe');
+var contact = document.getElementById('contact');
+var header = document.getElementById('header');
+var intro = document.getElementById('intro');
+var project = document.getElementById('project');
 
 
-// let isOn = false;
-
-// toggleButton.addEventListener('click', function () {
-//     isOn = !isOn; // Inverse l'état actuel (on/off)
-
-//     if (isOn) {
-
-//         aboutMe.style.backgroundColor = 'rgb(150 163 191)';
-//         contact.style.backgroundColor = 'rgb(150 163 191)';
-
-//     } else {
-
-//         aboutMe.style.backgroundColor = 'rgba(32, 41, 56, 1)';
-//         contact.style.backgroundColor = 'rgba(32, 41, 56, 1)';
 
 
-//     }
-// });
+let isOn = false;
+const toggleButton = document.getElementById('toggleButton');
+const lightElements = document.querySelectorAll('.light');
+const darkElements = document.querySelectorAll('.dark');
+const buttonElements = document.querySelectorAll('.switch-button');
+const textElements = document.querySelectorAll('.text-light');
+const nightIcon = document.querySelector('.moon-icon');
+
+
+toggleButton.addEventListener('click', function () {
+    isOn = !isOn;
+
+    lightElements.forEach(function (element) {
+        if (isOn) {
+            element.classList.add('light-night');
+            element.classList.remove('light-day');
+
+        } else {
+            element.classList.remove('light-night');
+            element.classList.add('light-day');
+        }
+    });
+
+    darkElements.forEach(function (element) {
+        if (isOn) {
+            element.classList.add('dark-night');
+            element.classList.remove('dark-day');
+
+        } else {
+            element.classList.remove('dark-night');
+            element.classList.add('dark-day');
+
+        }
+    });
+
+    buttonElements.forEach(function (element) {
+        if (isOn) {
+            element.classList.add('switch-button');
+        } else {
+            element.classList.remove('switch-button');
+        }
+    });
+    textElements.forEach(function (element) {
+        if (isOn) {
+            element.classList.add('dark-text');
+            element.classList.remove('light-text');
+
+        } else {
+            element.classList.remove('dark-text');
+            element.classList.add('light-text');
+
+        }
+    });
+
+    if (isOn) {
+        nightIcon.classList.remove('fas');
+        nightIcon.classList.remove('fa-moon');
+        nightIcon.classList.add('fa-regular');
+        nightIcon.classList.add('fa-sun');
+    } else {
+        nightIcon.classList.remove('fa-regular');
+        nightIcon.classList.remove('fa-sun');
+        nightIcon.classList.add('fas');
+        nightIcon.classList.add('fa-moon');
+    }
+});
