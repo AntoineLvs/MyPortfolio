@@ -5,6 +5,13 @@
     font-family: 'Carlito', sans-serif;
     list-style: none;
     text-decoration: none;
+    width: 100%;
+}
+
+body,
+html {
+    overflow-x: hidden;
+
 }
 
 /************************ HEADER ************************/
@@ -23,7 +30,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 100px;
     transition: all 0.3s ease-in-out;
-    background-color: #fff; /* Example background color */
+    background-color: #fff;
+    /* Example background color */
     /* Example background color */
 }
 
@@ -92,6 +100,10 @@
 
     #menu-icon {
         display: block;
+    }
+
+    .banner-text h1 {
+        font-size: 60px;
     }
 }
 
@@ -218,10 +230,11 @@ h2 {
 }
 
 .banner-img img {
-    width: 400px;
     height: auto;
     border-radius: 10px;
     transition: 0.2s ease-out;
+    width: 100%;
+    max-width: 400px;
 }
 
 .banner-img:hover img:hover,
@@ -673,10 +686,7 @@ html {
 
 /******************* RESPONSIVE ******************/
 
-@media (max-width: 1115px) {
-
-
-}
+@media (max-width: 1115px) {}
 
 @media (max-width: 775px) {
     .navlist {
@@ -742,11 +752,13 @@ html {
 }
 
 @media screen and (max-width: 800px) {
+
     .handBanner.active,
     .travelBanner.active,
     .hobbiesBanner.active {
         height: auto;
     }
+
     .banner-text p {
         font-size: 13px;
     }
@@ -784,8 +796,8 @@ html {
 
     }
 
-    .elsen{
-        margin-top:300px;
+    .elsen {
+        margin-top: 300px;
     }
 
 }
