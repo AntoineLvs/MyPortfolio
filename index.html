@@ -21,36 +21,39 @@
     <header id="header" class="dark dark-day">
         <a href="#" class="logo text-light">Lavenseau Antoine</a>
 
-        <div style="display: flex; flex-direction: row;">
-
-            <ul class="navlist">
-                <li><a href="#home" class="text-light">Home</a></li>
-                <li><a href="#aboutMe" class="text-light">About me</a></li>
-                <li><a href="#projects" class="text-light">Projects</a></li>
-                <li><a href="#contact" class="text-light">Contact</a></li>
-            </ul>
-
-            <div class="bx bx-menu" id="menu-icon"></div>
-
-            <div id="dropdown-menu" class="dropdown-menu">
-                <ul class="dropdown-navlist">
-                    <li><a href="#home" class="text-dark">Home</a></li>
-                    <li><a href="#aboutMe" class="text-dark">About me</a></li>
-                    <li><a href="#projects" class="text-dark">Projects</a></li>
-                    <li><a href="#contact" class="text-dark">Contact</a></li>
-
-                </ul>
-
-            </div>
+        <ul class="navlist">
+            <li><a href="#home" class="text-light header-home">Home</a></li>
+            <li><a href="#aboutMe" class="text-light header-about">About me</a></li>
+            <li><a href="#projects" class="text-light header-project">Projects</a></li>
+            <li><a href="#contact" class="text-light header-contact">Contact</a></li>
             <button id="toggleButton">
                 <i class="fas fa-moon text-light moon-icon"></i>
             </button>
             <div class="language-switcher">
                 <img id="language-icon" src="img/france-flag.svg" alt="France Flag" style="cursor: pointer;">
             </div>
-        </div>
+        </ul>
 
+        <div class="bx bx-menu text-light light-text" id="menu-icon"></div>
     </header>
+
+    <div id="dropdown-menu" class="dropdown-menu menu-day">
+        <div class="close-btn text-light light-text">&times;</div>
+        <ul class="dropdown-navlist">
+            <li><a href="#home" class="text-light light-text dropdown-header-home">Home</a></li>
+            <li><a href="#aboutMe" class="text-light light-text dropdown-header-about">About me</a></li>
+            <li><a href="#projects" class="text-light light-text dropdown-header-project">Projects</a></li>
+            <li><a href="#contact" class="text-light light-text dropdown-header-contact">Contact</a></li>
+            <div style="display: flex; align-items: center; flex-direction: row; justify-content: center;">
+                <button id="dropdownToggleButton">
+                    <i class="fas fa-moon text-light moon-icon"></i>
+                </button>
+                <div class="language-switcher">
+                    <img id="dropdown-language-icon" src="img/france-flag.svg" alt="France Flag" style="cursor: pointer;">
+                </div>
+            </div>
+        </ul>
+    </div>
 
 
     <section class="global">

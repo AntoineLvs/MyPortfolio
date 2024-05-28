@@ -1,6 +1,13 @@
 // translations.js
 const translations = {
     en: {
+        header: {
+            home: "Home",
+            about: "About me",
+            project: "Projects",
+            contact: "Contact",
+
+        },
         portfolioBanner: {
             title: "Portfolio",
             subtitle: "Web development",
@@ -46,6 +53,13 @@ const translations = {
     },
 
     fr: {
+        header: {
+            home: "Accueil",
+            about: "À propos",
+            project: "Projets",
+            contact: "Contact",
+
+        },
         portfolioBanner: {
             title: "Portfolio",
             subtitle: "Développement web",
@@ -89,6 +103,19 @@ const translations = {
 };
 
 function switchLanguage(lang) {
+
+    const headerHome = document.querySelector('.header-home');
+    const headerAbout = document.querySelector('.header-about');
+    const headerProject = document.querySelector('.header-project');
+    const headerContact = document.querySelector('.header-contact');
+
+    const dropdownHeaderHome = document.querySelector('.dropdown-header-home');
+    const dropdownHeaderAbout = document.querySelector('.dropdown-header-about');
+    const dropdownHeaderProject = document.querySelector('.dropdown-header-project');
+    const dropdownHeaderContact = document.querySelector('.dropdown-header-contact');
+
+
+
     const portfolioTitle = document.querySelector('.portfolio-title');
     const portfolioSubtitle = document.querySelector('.portfolio-subtitle');
     const portfolioTxt = document.querySelector('.portfolio-txt');
@@ -121,6 +148,15 @@ function switchLanguage(lang) {
 
 
 
+    headerHome.innerText = translations[lang].header.home;
+    headerAbout.innerText = translations[lang].header.about;
+    headerProject.innerText = translations[lang].header.project;
+    headerContact.innerText = translations[lang].header.contact;
+
+    dropdownHeaderHome.innerText = translations[lang].header.home;
+    dropdownHeaderAbout.innerText = translations[lang].header.about;
+    dropdownHeaderProject.innerText = translations[lang].header.project;
+    dropdownHeaderContact.innerText = translations[lang].header.contact;
 
 
     portfolioTitle.innerText = translations[lang].portfolioBanner.title;
@@ -153,18 +189,33 @@ function switchLanguage(lang) {
     contactTitle.innerText = translations[lang].contactBanner.title;
 
     const languageIcon = document.getElementById('language-icon');
+    const dropdownLanguageIcon = document.getElementById('dropdown-language-icon')
+
     if (lang === 'en') {
 
         languageIcon.src = "img/france-flag.svg";
         languageIcon.alt = "French Flag";
+        dropdownLanguageIcon.src = "img/france-flag.svg";
+        dropdownLanguageIcon.alt = "French Flag";
+
     } else {
         languageIcon.src = "img/england-flag.svg";
         languageIcon.alt = "English Flag";
+        dropdownLanguageIcon.src = "img/england-flag.svg";
+        dropdownLanguageIcon.alt = "English Flag";
+
     }
 
 }
 
+
 document.getElementById('language-icon').addEventListener('click', () => {
+    const currentLang = document.documentElement.lang === 'en' ? 'fr' : 'en';
+    document.documentElement.lang = currentLang;
+    switchLanguage(currentLang);
+});
+
+document.getElementById('dropdown-language-icon').addEventListener('click', () => {
     const currentLang = document.documentElement.lang === 'en' ? 'fr' : 'en';
     document.documentElement.lang = currentLang;
     switchLanguage(currentLang);

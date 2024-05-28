@@ -9,22 +9,27 @@
 
 /************************ HEADER ************************/
 
-header {
+#header {
     position: fixed;
     right: 0;
     top: 0;
     z-index: 1000;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     padding: 33px 9%;
     border-bottom: 1px solid rgb(229, 231, 235);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 100px;
-    transition: height 0.3s;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff; /* Example background color */
+    /* Example background color */
+}
 
-
+.navlist {
+    display: flex;
+    list-style: none;
 }
 
 
@@ -35,19 +40,74 @@ header {
 
 .dropdown-menu {
     display: none;
-    position: absolute;
-    top: 60px;
-    /* Adjust according to your header height */
-    right: 20px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Semi-transparent black background */
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-menu.open {
+    display: flex;
 }
 
 .dropdown-navlist {
     list-style: none;
-    padding: 10px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.dropdown-navlist li {
+    margin: 20px 0;
+}
+
+.dropdown-navlist li a {
+    color: white;
+    /* Text color for menu items */
+    font-size: 24px;
+    /* Font size for menu items */
+    text-decoration: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navlist {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+}
+
+#toggleButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 45px;
+    font-size: 20px;
+}
+
+#dropdownToggleButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .logo {
@@ -63,12 +123,15 @@ header {
 
 .navlist a {
     color: rgb(17, 24, 39);
-    margin-left: 60px;
     font-size: 15px;
     font-weight: 600;
+    margin-left: 60px;
+
     border-bottom: 2px solid transparent;
     transition: all .55s ease;
     padding-bottom: 39px;
+    transition: padding-bottom 0.3s;
+
 }
 
 .navlist a:hover {
@@ -98,14 +161,6 @@ header {
 
 }
 
-#toggleButton,
-#dropdownToggleButton {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding-left: 45px;
-    font-size: 20px;
-}
 
 .fa-moon {
     color: black;
@@ -214,7 +269,7 @@ h2 {
 .banner-text a.ctaa {
     background: transparent;
     border: 1px solid rgb(79, 70, 229);
-    margin-left: 20 px;
+    margin-left: 20px;
     color: rgb(79, 70, 229);
 }
 
@@ -460,8 +515,8 @@ h2 {
 .textGS,
 .textElsen {
     position: absolute;
-    width: 450px;
-    height: 400px;
+    width: 480px;
+    height: 420px;
     z-index: 2;
     opacity: 0;
     transition: 0.7s;
@@ -618,7 +673,12 @@ html {
 
 /******************* RESPONSIVE ******************/
 
-@media (max-width: 770px) {
+@media (max-width: 1115px) {
+
+
+}
+
+@media (max-width: 775px) {
     .navlist {
         display: none;
     }
@@ -628,16 +688,12 @@ html {
     }
 }
 
-@media screen and (max-width: 965px) {
+@media screen and (max-width: 970px) {
     .banner.intro {
         display: flex;
         align-items: center;
         flex-direction: column;
         padding: 15% 10%;
-    }
-
-    header {
-        height: 0px;
     }
 
     .navlist a {
@@ -686,10 +742,14 @@ html {
 }
 
 @media screen and (max-width: 800px) {
-    .handBanner.active {
-        height: 1300px;
+    .handBanner.active,
+    .travelBanner.active,
+    .hobbiesBanner.active {
+        height: auto;
     }
-
+    .banner-text p {
+        font-size: 13px;
+    }
 }
 
 
@@ -723,6 +783,11 @@ html {
         filter: grayscale(100%);
 
     }
+
+    .elsen{
+        margin-top:300px;
+    }
+
 }
 
 /******************* Dark Mode ******************/
@@ -753,20 +818,32 @@ html {
     color: rgba(57, 65, 83, 1) !important;
 }
 
+.menu-day {
+    background-color: rgba(242, 245, 246, 0.9) !important;
+}
+
+.menu-night {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
 .light-night,
 .dark-night,
 .switch-button,
 .dark-text,
 .light-day,
 .dark-day,
-.light-text {
+.light-text,
+.menu-day,
+.menu-night {
     transition: all 0.3s ease;
 }
 
 .light-night,
 .dark-night,
 .light-day,
-.dark-day {
+.dark-day,
+.menu-day,
+.menu-night {
     transition: background-color 0.3s ease, color 0.3s ease !important;
 }
 
