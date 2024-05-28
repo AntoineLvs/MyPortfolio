@@ -27,6 +27,29 @@ header {
 
 }
 
+
+#menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    /* Adjust according to your header height */
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-navlist {
+    list-style: none;
+    padding: 10px;
+}
+
 .logo {
     font-size: 30px;
     font-weight: 700;
@@ -35,6 +58,7 @@ header {
 
 .navlist {
     display: flex;
+    align-items: center;
 }
 
 .navlist a {
@@ -60,7 +84,22 @@ header {
     display: none;
 }
 
-#toggleButton {
+.language-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.language-switcher img {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: rgba(0, 0, 0, 0) !important;
+    margin-left: 25px;
+
+}
+
+#toggleButton,
+#dropdownToggleButton {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -579,8 +618,17 @@ html {
 
 /******************* RESPONSIVE ******************/
 
+@media (max-width: 770px) {
+    .navlist {
+        display: none;
+    }
 
-@media screen and (max-width: 950px) {
+    #menu-icon {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 965px) {
     .banner.intro {
         display: flex;
         align-items: center;

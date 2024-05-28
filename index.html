@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -21,27 +21,45 @@
     <header id="header" class="dark dark-day">
         <a href="#" class="logo text-light">Lavenseau Antoine</a>
 
-        <ul class="navlist">
-            <li><a href="#home" class="text-light">Home</a></li>
-            <li><a href="#aboutMe" class="text-light">About me</a></li>
-            <li><a href="#projects" class="text-light">Projects</a></li>
-            <li><a href="#contact" class="text-light">Contact</a></li>
+        <div style="display: flex; flex-direction: row;">
+
+            <ul class="navlist">
+                <li><a href="#home" class="text-light">Home</a></li>
+                <li><a href="#aboutMe" class="text-light">About me</a></li>
+                <li><a href="#projects" class="text-light">Projects</a></li>
+                <li><a href="#contact" class="text-light">Contact</a></li>
+            </ul>
+
+            <div class="bx bx-menu" id="menu-icon"></div>
+
+            <div id="dropdown-menu" class="dropdown-menu">
+                <ul class="dropdown-navlist">
+                    <li><a href="#home" class="text-dark">Home</a></li>
+                    <li><a href="#aboutMe" class="text-dark">About me</a></li>
+                    <li><a href="#projects" class="text-dark">Projects</a></li>
+                    <li><a href="#contact" class="text-dark">Contact</a></li>
+
+                </ul>
+
+            </div>
             <button id="toggleButton">
                 <i class="fas fa-moon text-light moon-icon"></i>
             </button>
+            <div class="language-switcher">
+                <img id="language-icon" src="img/france-flag.svg" alt="France Flag" style="cursor: pointer;">
+            </div>
+        </div>
 
-        </ul>
-
-
-        <div class="bx bx-menu" id="menu-icon"></div>
     </header>
+
+
     <section class="global">
         <section class="banner intro light light-day" id="home">
             <div class="banner-text">
-                <h1 class="text-light">Portfolio</h1>
-                <h3 class="text-light">Web development</h3>
-                <p class="text-light">
-                    Hi, my name is Antoine Lavenseau. I am currently a french student in third year of engineering
+                <h1 class="text-light portfolio-title">Portfolio</h1>
+                <h3 class="text-light portfolio-subtitle">Web development</h3>
+                <p class="text-light portfolio-txt">
+                    Hi, my name is Antoine Lavenseau. I am currently a french student in first year of engineering
                     school,
                     specialized in computer science. I am looking for an internship abroad, in full stack
                     development.<br>
@@ -50,11 +68,10 @@
                     You will learn a lot about me, like my different hobbies, or some projects I worked on, have fun
                     visiting my website!
                 </p>
-                <a href="#aboutMe">More about me</a>
-                <a href="#projects">Projects</a>
-                <a href="img/CV-A4-English.pdf" target="_blank">Curriculum Vitae</a>
-                <a href="#contact" class="ctaa"><i class="ri-mail-fill"></i>Contact me !</a>
-
+                <a href="#aboutMe" class="ctaa-about">More about me</a>
+                <a href="#projects" class="ctaa-project">Projects</a>
+                <a href="img/CV-A4-English.pdf" class="ctaa-cv" target="_blank">Curriculum Vitae</a>
+                <a href="#contact" class="ctaa ctaa-contact"><i class="ri-mail-fill"></i>Contact me !</a>
 
             </div>
             <div class="banner-img">
@@ -70,26 +87,28 @@
 
         <section class="banner about dark dark-day" id="aboutMe">
             <div class="banner-text">
-                <h1 class="title text-light">More about me</h1>
+                <h1 class="title text-light about-title">More about me</h1>
                 <div class="school-career">
-                    <p class="text-light">I am a French student in computer science at CESI Bordeaux, as well as a web
+                    <p class="text-light about-subtitle">I am a French student in computer science at CESI Bordeaux, as
+                        well as a web
                         developer
                         with several experiences in this field. I am proficient in HTML/CSS/JavaScript
-                        languages, as well as PHP. During my last internship, I worked alot with Laravel, Tailwindcss, Alpine, and Livewire ! I am a fast learner and can quickly adapt to different
+                        languages, as well as PHP. During my last internship, I worked alot with Laravel, Tailwindcss,
+                        Alpine, and Livewire ! I am a fast learner and can quickly adapt to different
                         work environments and frameworks. I am eager to work with you to learn and develop great
                         things!
 
                     </p>
                 </div>
                 <div class="travels">
-                    <button id="travelButton" class="switch-button">Travels</button>
+                    <button id="travelButton" class="switch-button travels-title">Travels</button>
                     <div id="travelBanner" class="travelBanner">
                         <div class="japan">
                             <div class="column-img">
                                 <img class="image" src="img/japan.jpg" alt="Image">
                             </div>
                             <div class="column-txt">
-                                <p class="text text-light">
+                                <p class="text text-light japan-txt">
                                     For my 4th year in CESI, I had the opportunity to make an exchange program with a
                                     japanese University.
                                     So I went to tokyo, from March 20, until August 3rd. It was an incredible experience
@@ -109,7 +128,7 @@
                         </div>
                         <div class="germany">
                             <div class="column-txt">
-                                <p class="text text-light">
+                                <p class="text text-light germany-txt">
                                     Also during my 4th year in CESI, I had the opportunity to make an internship in
                                     Hamburg, in Germany. I was working with ElsenMedia, which is a Web agency.
                                     I met Mario, which is the CEO, Jasper, and Sinem. I am very grateful as they accept
@@ -134,14 +153,14 @@
 
                 </div>
                 <div class="sports">
-                    <button id="handButton" class="switch-button">Sports</button>
+                    <button id="handButton" class="switch-button sports-title">Sports</button>
                     <div id="handBanner" class="handBanner">
                         <div class="sport">
                             <div class="column-img">
                                 <img class="image" src="img/handball.png" alt="Image">
                             </div>
                             <div class="column-txt">
-                                <p class="text text-light">
+                                <p class="text text-light hand-txt">
                                     I have been doing handball for almost 5 years, I did 3 years in high school, and
                                     almost 2 years during studies. This sport taught me to play as a team, and to take
                                     up challenges.
@@ -165,7 +184,7 @@
                         <div id="climbBanner" class="climbBanner">
                             <div class="sport">
                                 <div class="column-txt">
-                                    <p class="text text-light">
+                                    <p class="text text-light climb-txt">
                                         In April 2023, I took up a challenge with some friends to do 1 month of intense
                                         climbing. The challenge was to climb 4 times a week, as well as strength
                                         training to
@@ -189,10 +208,11 @@
                 </div>
 
                 <div class="hobbies">
-                    <button id="hobbiesButton" class="switch-button">Hobbies</button>
+                    <button id="hobbiesButton" class="switch-button hobbies-title">Hobbies</button>
                     <div id="hobbiesBanner" class="hobbiesBanner">
                         <div class="hobbiesContainer">
-                            <p class="text-light">I have many hobbies in my life. I enjoy doing some sport, like
+                            <p class="text-light hobbies-txt">I have many hobbies in my life. I enjoy doing some sport,
+                                like
                                 handball, climbing, and
                                 going
                                 to gym !
@@ -237,14 +257,14 @@
 
         <section class="banner project light light-day" id="projects">
             <div class="banner-text">
-                <h1 class="title text-light">Projects</h1>
+                <h1 class="title text-light projects-title">Projects</h1>
                 <div class="elsen">
                     <div class="button-container">
                         <div id="buttonElsenTable"></div>
                         <div id="buttonElsenMap"></div>
                     </div>
                     <div class="textElsen">
-                        <p>
+                        <p class="elsen-txt">
                             For my 2023/2024 internship, I joined <a href="https://elsenmedia.com/"
                                 target="_blank"><b>ElsenMedia</b></a>, a web agency based in Hamburg, in Germany.
                             I improved my development knowledge, by working with a new framework. I used the TALL
@@ -262,7 +282,7 @@
                 <div class="giantSentinel">
                     <div id="buttonGS"></div>
                     <div class="textGS">
-                        <p>
+                        <p class="gs-txt">
                             Giant Sentinel is a project I worked on during my internship at <a
                                 href="https://programisto.fr/" target="_blank"><b>Programisto</b></a> in early 2023.
                             I was able to work in html, css and javascript, without a framework. My mission was to
@@ -279,7 +299,7 @@
                 <div class="savan">
                     <div id="buttonSavan"></div>
                     <div class="textSavan">
-                        <p>
+                        <p class="savan-txt">
                             During my first internship in 2022-2023 at <a href="https://www.brumisphere.com/"
                                 target="_blank"><b>Brumisphere</b></a> , I was able to work on different
                             websites, mainly on the front-end. I worked on wordpress, using a simple and manageable
@@ -295,7 +315,7 @@
                 </div>
                 <div class="boa">
                     <div class="textBoa">
-                        <p>
+                        <p class="boa-txt">
                             Bordeaux Open Air is a festival that takes place in Bordeaux every summer since 2016. I had
                             the
                             opportunity to work on several different pages of this website, again on wordpress. I was
@@ -319,7 +339,7 @@
         </div>
         <section class="banner contact dark dark-day" id="contact">
             <div class="banner-text">
-                <h1 class="text-light">Contact me</h1>
+                <h1 class="text-light contact-title">Contact me</h1>
                 <div class="contact-container">
                     <div class="map">
                         <iframe
@@ -344,6 +364,7 @@
     </section>
 
     <script src="js/script.js" charset="utf-8"></script>
+    <script src="js/translations.js" charset="utf-8"></script>
 
 </body>
 

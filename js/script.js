@@ -84,7 +84,7 @@ var project = document.getElementById('project');
 
 
 let isOn = false;
-const toggleButton = document.getElementById('toggleButton');
+const toggleButton = document.getElementById('toggleButton', 'dropdownToggleButton' );
 const lightElements = document.querySelectorAll('.light');
 const darkElements = document.querySelectorAll('.dark');
 const buttonElements = document.querySelectorAll('.switch-button');
@@ -148,4 +148,10 @@ toggleButton.addEventListener('click', function () {
         nightIcon.classList.add('fas');
         nightIcon.classList.add('fa-moon');
     }
+});
+
+
+document.getElementById('menu-icon').addEventListener('click', () => {
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
 });
