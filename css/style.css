@@ -5,7 +5,6 @@
     font-family: 'Carlito', sans-serif;
     list-style: none;
     text-decoration: none;
-    width: 100%;
 }
 
 body,
@@ -100,10 +99,6 @@ html {
 
     #menu-icon {
         display: block;
-    }
-
-    .banner-text h1 {
-        font-size: 60px;
     }
 }
 
@@ -696,6 +691,10 @@ html {
     #menu-icon {
         display: block;
     }
+
+    .banner-text h1 {
+        font-size: 60px;
+    }
 }
 
 @media screen and (max-width: 970px) {
@@ -704,6 +703,7 @@ html {
         align-items: center;
         flex-direction: column;
         padding: 15% 10%;
+        padding-top: 150px;
     }
 
     .navlist a {
