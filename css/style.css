@@ -131,7 +131,8 @@ h2 {
 }
 
 .banner-img:hover img:hover,
-.sports img:hover {
+.sports img:hover,
+.travels img:hover {
     transform: scale(1.1);
 }
 
@@ -238,27 +239,33 @@ h2 {
 }
 
 .sports,
-.hobbies {
+.hobbies,
+.travels {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.sports img {
+.sports img,
+.travels img {
     width: 80%;
     border-radius: 10px;
     transition: 0.2s ease-out;
     margin-bottom: 40px;
 }
 
-.sport {
+.sport,
+.japan,
+.germany {
     display: flex;
     align-items: center;
     flex-direction: row;
     margin-top: 50px;
 }
 
-.sport p {
+.sport p,
+.japan p,
+.germany p {
     transition: 0.2s ease;
 }
 
@@ -289,7 +296,8 @@ h2 {
 }
 
 #handButton,
-#hobbiesButton {
+#hobbiesButton,
+#travelButton {
     display: inline-block;
     color: white;
     background: rgb(79, 70, 229);
@@ -307,7 +315,8 @@ h2 {
 }
 
 #handButton:hover,
-#hobbiesButton:hover {
+#hobbiesButton:hover,
+#travelButton:hover {
     background: rgb(99, 102, 241);
     border: 1px solid white;
     cursor: pointer;
@@ -367,7 +376,8 @@ h2 {
 }
 
 .handBanner,
-.hobbiesBanner {
+.hobbiesBanner,
+.travelBanner {
     height: 0;
     overflow: hidden;
     transition: height 0.7s ease;
@@ -381,12 +391,14 @@ h2 {
 
 .handBanner.active {
     height: 1000px;
-    /* Modifier la hauteur selon vos besoins */
+}
+
+.travelBanner.active {
+    height: 1000px;
 }
 
 .hobbiesBanner.active {
     height: 400px;
-    /* Modifier la hauteur selon vos besoins */
 }
 
 #buttonSavan,
@@ -598,7 +610,9 @@ html {
 
     }
 
-    .sport {
+    .sport,
+    .japan,
+    .germany {
         flex-direction: column;
     }
 
