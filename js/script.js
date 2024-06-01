@@ -38,24 +38,22 @@ sliders.forEach(slider => {
 });
 
 
-window.addEventListener('scroll', function () {
-    var header = document.getElementById('header');
-    var navLinks = document.querySelectorAll('.navlist a');
+var header = document.getElementById('header');
+const navLinks = document.querySelectorAll('.navlist a');
 
+window.addEventListener('scroll', function () {
     if (window.scrollY > 0) {
         navLinks.forEach(function (link) {
             link.style.paddingBottom = '24px';
         });
-        header.style.height = '50px'; 
+        header.style.height = '70px';
         header.style.opacity = '0.85';
-
     } else {
         navLinks.forEach(function (link) {
             link.style.paddingBottom = '39px';
         });
         header.style.height = '100px';
         header.style.opacity = '1';
-
     }
 });
 
@@ -85,11 +83,13 @@ var project = document.getElementById('project');
 
 let isOn = false;
 const toggleButton = document.getElementById('toggleButton');
+const dropdownToggleButton = document.getElementById('dropdownToggleButton');
 const lightElements = document.querySelectorAll('.light');
 const darkElements = document.querySelectorAll('.dark');
 const buttonElements = document.querySelectorAll('.switch-button');
 const textElements = document.querySelectorAll('.text-light');
 const nightIcon = document.querySelector('.moon-icon');
+const dropdownMenu = document.querySelector('.dropdown-menu');
 
 
 toggleButton.addEventListener('click', function () {
@@ -142,10 +142,103 @@ toggleButton.addEventListener('click', function () {
         nightIcon.classList.remove('fa-moon');
         nightIcon.classList.add('fa-regular');
         nightIcon.classList.add('fa-sun');
+
+        dropdownMenu.classList.add('menu-night');
+        dropdownMenu.classList.remove('menu-day');
     } else {
         nightIcon.classList.remove('fa-regular');
         nightIcon.classList.remove('fa-sun');
         nightIcon.classList.add('fas');
         nightIcon.classList.add('fa-moon');
+
+        dropdownMenu.classList.remove('menu-night');
+        dropdownMenu.classList.add('menu-day');
     }
 });
+
+
+
+
+dropdownToggleButton.addEventListener('click', function () {
+    isOn = !isOn;
+
+    lightElements.forEach(function (element) {
+        if (isOn) {
+            element.classList.add('light-night');
+            element.classList.remove('light-day');
+
+        } else {
+            element.classList.remove('light-night');
+            element.classList.add('light-day');
+        }
+    });
+
+    darkElements.forEach(function (element) {
+        if (isOn) {
+            element.classList.add('dark-night');
+            element.classList.remove('dark-day');
+
+        } else {
+            element.classList.remove('dark-night');
+            element.classList.add('dark-day');
+
+        }
+    });
+
+    buttonElements.forEach(function (element) {
+        if (isOn) {
+            element.classList.add('switch-button');
+        } else {
+            element.classList.remove('switch-button');
+        }
+    });
+    textElements.forEach(function (element) {
+        if (isOn) {
+            element.classList.add('dark-text');
+            element.classList.remove('light-text');
+
+        } else {
+            element.classList.remove('dark-text');
+            element.classList.add('light-text');
+
+        }
+    });
+
+    if (isOn) {
+        nightIcon.classList.remove('fas');
+        nightIcon.classList.remove('fa-moon');
+        nightIcon.classList.add('fa-regular');
+        nightIcon.classList.add('fa-sun');
+
+        dropdownMenu.classList.add('menu-night');
+        dropdownMenu.classList.remove('menu-day');
+    } else {
+        nightIcon.classList.remove('fa-regular');
+        nightIcon.classList.remove('fa-sun');
+        nightIcon.classList.add('fas');
+        nightIcon.classList.add('fa-moon');
+
+        dropdownMenu.classList.remove('menu-night');
+        dropdownMenu.classList.add('menu-day');
+    }
+});
+
+
+document.getElementById('menu-icon').addEventListener('click', () => {
+    const dropdownMenu = document.getElementById('dropdown-menu');
+        dropdownMenu.classList.toggle('open');
+});
+
+document.querySelector('.close-btn').addEventListener('click', () => {
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    dropdownMenu.classList.remove('open');
+});
+
+document.querySelectorAll('.dropdown-navlist a').forEach(link => {
+    link.addEventListener('click', () => {
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        dropdownMenu.classList.remove('open');
+    });
+});
+
+

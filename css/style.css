@@ -7,24 +7,114 @@
     text-decoration: none;
 }
 
+body,
+html {
+    overflow-x: hidden;
+
+}
+
 /************************ HEADER ************************/
 
-header {
+#header {
     position: fixed;
     right: 0;
     top: 0;
     z-index: 1000;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     padding: 33px 9%;
     border-bottom: 1px solid rgb(229, 231, 235);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 100px;
-    transition: height 0.3s;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    /* Example background color */
+    /* Example background color */
+}
+
+.navlist {
+    display: flex;
+    list-style: none;
+}
 
 
+#menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Semi-transparent black background */
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-menu.open {
+    display: flex;
+}
+
+.dropdown-navlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.dropdown-navlist li {
+    margin: 20px 0;
+}
+
+.dropdown-navlist li a {
+    color: white;
+    /* Text color for menu items */
+    font-size: 24px;
+    /* Font size for menu items */
+    text-decoration: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navlist {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+}
+
+#toggleButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 45px;
+    font-size: 20px;
+}
+
+#dropdownToggleButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .logo {
@@ -35,16 +125,20 @@ header {
 
 .navlist {
     display: flex;
+    align-items: center;
 }
 
 .navlist a {
     color: rgb(17, 24, 39);
-    margin-left: 60px;
     font-size: 15px;
     font-weight: 600;
+    margin-left: 60px;
+
     border-bottom: 2px solid transparent;
     transition: all .55s ease;
     padding-bottom: 39px;
+    transition: padding-bottom 0.3s;
+
 }
 
 .navlist a:hover {
@@ -60,13 +154,20 @@ header {
     display: none;
 }
 
-#toggleButton {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding-left: 45px;
-    font-size: 20px;
+.language-switcher {
+    display: flex;
+    align-items: center;
 }
+
+.language-switcher img {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: rgba(0, 0, 0, 0) !important;
+    margin-left: 25px;
+
+}
+
 
 .fa-moon {
     color: black;
@@ -124,13 +225,30 @@ h2 {
 }
 
 .banner-img img {
-    width: 400px;
     height: auto;
     border-radius: 10px;
     transition: 0.2s ease-out;
+    width: 100%;
+    max-width: 400px;
+    border: 10px solid rgb(79, 70, 229);
+    transform: rotate(3deg);
+
+
 }
 
-.banner-img:hover img:hover,
+
+.sports img.right,
+.travels img.right  {
+    transform: rotate(2deg);
+
+}
+
+.sports img.left ,
+.travels img.left  {
+    transform: rotate(-2deg);
+}
+
+.banner-img img:hover,
 .sports img:hover,
 .travels img:hover {
     transform: scale(1.1);
@@ -175,7 +293,7 @@ h2 {
 .banner-text a.ctaa {
     background: transparent;
     border: 1px solid rgb(79, 70, 229);
-    margin-left: 20 px;
+    margin-left: 20px;
     color: rgb(79, 70, 229);
 }
 
@@ -344,6 +462,8 @@ h2 {
     height: auto;
     display: none;
     height: 280px;
+    border-radius: 10px;
+
 }
 
 
@@ -356,6 +476,12 @@ h2 {
 
 }
 
+.banner.banner a.insta-link {
+    background: none;
+    color: rgb(79, 70, 229);
+    padding: 0;
+    margin: 0;
+}
 
 
 /************************ PROJECT ************************/
@@ -421,8 +547,8 @@ h2 {
 .textGS,
 .textElsen {
     position: absolute;
-    width: 450px;
-    height: 400px;
+    width: 480px;
+    height: 420px;
     z-index: 2;
     opacity: 0;
     transition: 0.7s;
@@ -579,17 +705,29 @@ html {
 
 /******************* RESPONSIVE ******************/
 
+@media (max-width: 1115px) {}
 
-@media screen and (max-width: 950px) {
+@media (max-width: 775px) {
+    .navlist {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .banner-text h1 {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 970px) {
     .banner.intro {
         display: flex;
         align-items: center;
         flex-direction: column;
         padding: 15% 10%;
-    }
-
-    header {
-        height: 0px;
+        padding-top: 150px;
     }
 
     .navlist a {
@@ -616,8 +754,10 @@ html {
         flex-direction: column;
     }
 
-    .handBanner.active {
-        height: 1200px;
+    .handBanner.active,
+    .travelBanner.active,
+    .hobbiesBanner.active {
+        height: auto;
     }
 
     .contact-container {
@@ -635,17 +775,96 @@ html {
     .button-container {
         width: 800px;
     }
+    .informations {
+        padding-top: 20px;
+    }
+    
+    
 }
 
 @media screen and (max-width: 800px) {
-    .handBanner.active {
-        height: 1300px;
+
+    .handBanner.active,
+    .travelBanner.active,
+    .hobbiesBanner.active {
+        height: auto;
     }
 
+    .banner-text p {
+        font-size: 13px;
+    }
 }
 
 
 @media screen and (max-width: 650px) {
+
+
+    .savan:hover #buttonSavan,
+    .boa:hover #buttonBoa,
+    .giantSentinel:hover #buttonGS,
+    .elsen:hover #buttonElsenTable,
+    .elsen:hover #buttonElsenMap {
+        margin-right: 0;
+        margin-left: 0;
+        filter: none;
+        transform: translateY(-10%);
+    }
+
+    .elsen:hover #buttonElsenMap {
+        transform: none;
+        /* Move right */
+        filter: none;
+
+    }
+
+    .elsen:hover #buttonElsenTable {
+        transform: none;
+        /* Move left */
+        filter: none;
+
+    }
+
+    .savan:hover .textSavan,
+    .boa:hover .textBoa,
+    .giantSentinel:hover .textGS,
+    .elsen:hover .textElsen {
+        opacity: 1;
+        margin-left: 0;
+    }
+
+    #buttonSavan,
+    #buttonBoa,
+    #buttonGS,
+    #buttonElsenTable,
+    #buttonElsenMap {
+        width: 300px;
+        height: 450px;
+    }
+
+
+
+    #buttonElsenMap {
+        margin-bottom: 50px;
+    }
+
+
+    .textSavan,
+    .textBoa,
+    .textGS,
+    .textElsen {
+        width: 300px !important;
+        height: 450px !important;
+        position: static !important;
+        z-index: 1 !important;
+        opacity: 1 !important;
+    }
+
+
+    .textElsen {
+        height: 480px !important;
+
+    }
+
     .button-container {
         display: flex;
         justify-content: space-between;
@@ -654,27 +873,18 @@ html {
         align-items: center;
     }
 
-    .elsen #buttonElsenMap {
-        transform: translateY(-200px);
+
+    #buttonElsenTable,
+    #buttonElsenMap {
+        width: 300px;
+        height: 230px;
+    }
+    
+    .informations {
+        padding-top: 20px;
     }
 
-    .elsen #buttonElsenTable {
-        transform: translateY(-200px);
-    }
 
-    .elsen:hover #buttonElsenMap {
-        transform: translateY(-100px);
-        /* Move right */
-        filter: grayscale(100%);
-
-    }
-
-    .elsen:hover #buttonElsenTable {
-        transform: translateY(-300px);
-        /* Move left */
-        filter: grayscale(100%);
-
-    }
 }
 
 /******************* Dark Mode ******************/
@@ -705,20 +915,32 @@ html {
     color: rgba(57, 65, 83, 1) !important;
 }
 
+.menu-day {
+    background-color: rgba(242, 245, 246, 0.9) !important;
+}
+
+.menu-night {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
 .light-night,
 .dark-night,
 .switch-button,
 .dark-text,
 .light-day,
 .dark-day,
-.light-text {
+.light-text,
+.menu-day,
+.menu-night {
     transition: all 0.3s ease;
 }
 
 .light-night,
 .dark-night,
 .light-day,
-.dark-day {
+.dark-day,
+.menu-day,
+.menu-night {
     transition: background-color 0.3s ease, color 0.3s ease !important;
 }
 
