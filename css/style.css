@@ -230,9 +230,25 @@ h2 {
     transition: 0.2s ease-out;
     width: 100%;
     max-width: 400px;
+    border: 10px solid rgb(79, 70, 229);
+    transform: rotate(3deg);
+
+
 }
 
-.banner-img:hover img:hover,
+
+.sports img.right,
+.travels img.right  {
+    transform: rotate(2deg);
+
+}
+
+.sports img.left ,
+.travels img.left  {
+    transform: rotate(-2deg);
+}
+
+.banner-img img:hover,
 .sports img:hover,
 .travels img:hover {
     transform: scale(1.1);
@@ -446,6 +462,8 @@ h2 {
     height: auto;
     display: none;
     height: 280px;
+    border-radius: 10px;
+
 }
 
 
@@ -458,6 +476,12 @@ h2 {
 
 }
 
+.banner.banner a.insta-link {
+    background: none;
+    color: rgb(79, 70, 229);
+    padding: 0;
+    margin: 0;
+}
 
 
 /************************ PROJECT ************************/
@@ -730,8 +754,10 @@ html {
         flex-direction: column;
     }
 
-    .handBanner.active {
-        height: 1200px;
+    .handBanner.active,
+    .travelBanner.active,
+    .hobbiesBanner.active {
+        height: auto;
     }
 
     .contact-container {
@@ -749,6 +775,11 @@ html {
     .button-container {
         width: 800px;
     }
+    .informations {
+        padding-top: 20px;
+    }
+    
+    
 }
 
 @media screen and (max-width: 800px) {
@@ -783,14 +814,14 @@ html {
         transform: none;
         /* Move right */
         filter: none;
-    
+
     }
-    
+
     .elsen:hover #buttonElsenTable {
         transform: none;
         /* Move left */
         filter: none;
-    
+
     }
 
     .savan:hover .textSavan,
@@ -847,6 +878,10 @@ html {
     #buttonElsenMap {
         width: 300px;
         height: 230px;
+    }
+    
+    .informations {
+        padding-top: 20px;
     }
 
 
