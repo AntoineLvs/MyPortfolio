@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +15,91 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.signature {
+  font-family: 'Just Me Again Down Here', sans-serif;
+}
+.border-b-3 {
+  border-bottom: 3px solid white;
+}
+html {
+  scroll-behavior: smooth;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 0.4s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 1s ease-out, transform 0.4s ease-out;
+}
+
+.fade-in-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 1s ease-out, transform 0.4s ease-out;
+}
+
+.fade-in-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1s ease-out, transform 0.4s ease-out;
+}
+
+.fade-in-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.parallax-section {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.custom-shadow {
+  box-shadow: 0 0 5px #ccc;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px rgba(234, 0, 0, 0) inset !important;
+  -webkit-text-fill-color: #ea580c !important;
+  transition: background-color 5000s ease-in-out 0s;
+  
+}
+
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgba(255, 0, 0, 0) inset !important;
+  -webkit-text-fill-color: #ea580c !important;
+}
+
+select {
+  background-color: #333; /* Couleur d'arrière-plan */
+  color: #fff; /* Couleur du texte */
+  border: 1px solid #fff; /* Bordure blanche */
+  padding: 10px; /* Espacement intérieur */
+  font-size: 16px; /* Taille du texte */
+  border-radius: 5px; /* Arrondi des coins */
+}
+
+select option {
+  background-color: #333; /* Couleur de fond des options */
+  color: #fff; /* Couleur du texte dans les options */
 }
