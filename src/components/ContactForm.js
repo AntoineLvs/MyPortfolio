@@ -17,6 +17,9 @@ const ContactFormSection = ({ typingMacImage }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Destructure formData to extract individual values
+        const { name, phone, email, address, service, description } = formData;
+
         try {
             const response = await fetch('/api/send-email', {
                 method: 'POST',
@@ -44,6 +47,7 @@ const ContactFormSection = ({ typingMacImage }) => {
             alert('Erreur lors de la soumission du formulaire');
         }
     };
+
 
     return (
         <section
