@@ -11,7 +11,7 @@ const translations = {
         portfolioBanner: {
             title: "Portfolio",
             subtitle: "Web development",
-            description1: "Hi, my name is Antoine Lavenseau. I am currently a French student in the first year of engineering school, specialized in computer science. I am looking for an internship in Bordeaux, in full stack development.",
+            description1: "Hi, my name is Antoine Lavenseau. I am currently a French student in the last year of engineering school, specialized in computer science. I am looking for an internship in Bordeaux, in full stack development.",
             description2: "I created this website from scratch, using only HTML, CSS, and JavaScript, with no frameworks, to present myself in detail. You will learn a lot about me, like my different hobbies, or some projects I worked on. Have fun visiting my website!",
             moreAboutMe: "More about me",
             projects: "Projects",
@@ -62,7 +62,7 @@ const translations = {
         portfolioBanner: {
             title: "Portfolio",
             subtitle: "Développement web",
-            description1: "Bonjour, je m'appelle Antoine Lavenseau. Je suis actuellement un étudiant français en première année d'école d'ingénieur, spécialisé en informatique. Je cherche un stage à Bordeaux, en développement full stack.",
+            description1: "Bonjour, je m'appelle Antoine Lavenseau. Je suis actuellement un étudiant français en dernière année d'école d'ingénieur, spécialisé en informatique. Je cherche un stage à Bordeaux, en développement full stack.",
             description2: "J'ai créé ce site web de A à Z, en utilisant uniquement HTML, CSS et JavaScript, sans framework, pour me présenter en détail. Vous en apprendrez beaucoup sur moi, comme mes différents passe-temps, ou certains projets sur lesquels j'ai travaillé. Amusez-vous en visitant mon site!",
             moreAboutMe: "Plus sur moi",
             projects: "Projets",
